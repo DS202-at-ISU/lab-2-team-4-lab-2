@@ -17,3 +17,41 @@ Include your answers in this document (Rmd file). Make sure that it knits proper
 
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
 Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
+
+Sofi's Answers:
+```{r}
+# Step 1: inspect the first few lines of the data set
+library(classdata)
+data("ames")
+head(ames)
+str(ames)
+summary(ames)
+```
+Variables:
+Parcel ID (Character): The unique identifier for each property.
+Address (Character): The address of the property, including street name and city.
+Style (Factor): The architectural style of the property, with 12 levels (e.g., "1 Story Frame", "2 Story Frame").
+Occupancy (Factor): The type of occupancy for the property, with 5 levels (e.g., "Condominium", "Single-Family / Owner Occupied").
+Sale Date (Date): The date when the property was sold.
+Sale Price (Numeric): The sale price of the property. Range is from 0 to $20,500,000.
+Multi Sale (Character): Indicator of whether the property was part of a multiple sale. Most values are missing (NA).
+Year Built (Numeric): The year the property was built, ranging from 0 to 2022.
+Acres (Numeric): The size of the property in acres. Range from 0 to 12.012 acres.
+Total Living Area (sf) (Numeric): The total living area of the property in square feet. Range from 0 to 6007 square feet.
+Bedrooms (Numeric): The number of bedrooms in the property. Range from 0 to 10 bedrooms.
+Finished Basement Area (sf) (Numeric): The size of the finished basement in square feet. Range from 10 to 6496 square feet.
+Lot Area (sf) (Numeric): The size of the lot in square feet. Range from 0 to 523,228 square feet.
+AC (Character): Whether the property has air conditioning ("Yes"/"No").
+Fireplace (Character): Whether the property has a fireplace ("Yes"/"No").
+Neighborhood (Factor): The neighborhood the property is located in. There are 42 levels, each representing a different neighborhood.
+Data Range Expectations:
+Sale Price: Expected to range from $0 (properties sold for $0) to a high value of $20,500,000.
+Year Built: The properties are built between 0 (indicating possibly missing data or incomplete records) to 2022.
+Acres: The property size ranges from 0 to 12.012 acres, with most properties having smaller lot sizes.
+Total Living Area (sf): The living area ranges from 0 to 6007 square feet. Properties with 0 square feet may indicate missing or incomplete data.
+Bedrooms: Properties range from 0 to 10 bedrooms, with a majority likely having 2-4 bedrooms.
+Finished Basement Area (sf): This ranges from 10 to 6496 square feet, with many properties lacking basement information (NA values).
+Lot Area (sf): The lot sizes range from 0 to 523,228 square feet. Smaller lots are expected, but there are outliers with very large lot sizes.
+Neighborhood: There are 42 neighborhoods, and the properties are distributed across these areas.
+
+
