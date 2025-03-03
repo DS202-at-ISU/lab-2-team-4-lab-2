@@ -56,12 +56,19 @@ Data Range Expectations:
 
 ```{r}
 #Step 4: answering pick a variable that might be related to the main variable. what is the range of that variable? plot. describe the pattern. Main variable is Sale Price
-ggplot(ames, aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
-  geom_point(alpha = 0.5, color = "blue") + 
-  labs(title = "Sale Price vs Total Living Area", 
-       x = "Total Living Area (sf)", 
-       y = "Sale Price") +
-  geom_smooth(method = "lm", color = "red", se = FALSE) 
-```
+range(ames$`Sale Price`, na.rm = TRUE)
 
+ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(binwidth = 50000, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Sale Price", x = "Sale Price", y = "Count") +
+  theme_minimal()
+
+```
+Pattern Description:
+Right-Skewed Distribution:
+- Most of the sale prices are concentrated on the lower end.
+A long tail extends towards higher prices, indicating a few extremely expensive properties.
+Extreme Outliers:
+- A small number of properties have very high prices (above $5,000,000 and even close to $20,000,000).
+These high prices likely represent commercial properties or luxury estates.
 
