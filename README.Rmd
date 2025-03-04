@@ -72,3 +72,34 @@ Extreme Outliers:
 - A small number of properties have very high prices (above $5,000,000 and even close to $20,000,000).
 These high prices likely represent commercial properties or luxury estates.
 
+Tanish's Answers:
+library(classdata)
+data(ames)
+dim(ames)            
+summary(ames)
+
+hist(ames$SalePrice,
+     main = "Distribution of Sale Prices in Ames",
+     xlab = "Sale Price",
+     breaks = 30)
+     
+plot(ames$GrLivArea, ames$SalePrice,
+     xlab = "Above Grade Living Area (sq ft)",
+     ylab = "Sale Price ($)",
+     main = "Sale Price vs. GrLivArea")
+cor(ames$GrLivArea, ames$SalePrice, use = "complete.obs")
+
+boxplot(SalePrice ~ OverallQual, 
+        data = ames,
+        xlab = "Overall Quality",
+        ylab = "Sale Price ($)",
+        main = "Sale Price by Overall Quality")
+
+1. The first rows show variables like SalePrice, GrLivArea, OverallQual, and Neighborhood. SalePrice is in dollars, GrLivArea in square feet, OverallQual on a quality scale, and Neighborhood as discrete labels.
+
+2. The main focus is SalePrice, which measures property value and is central to any home-sale analysis.
+
+3. SalePrice typically ranges from around $30,000 to over $700,000. A histogram is right-skewed, with most homes clustered in the lower-to-mid range and a few high-priced outliers.
+
+4. GrLivArea, ranging from a few hundred to over 3,000 square feet, shows a strong positive relationship with SalePrice. A scatterplot highlights that larger living areas generally command higher prices, with occasional outliers reflecting luxury properties.
+
